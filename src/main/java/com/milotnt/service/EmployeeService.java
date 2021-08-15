@@ -1,0 +1,26 @@
+package com.milotnt.service;
+
+import com.milotnt.pojo.Employee;
+
+import java.util.List;
+
+/**
+ * @author ZhangMing [1157038410@qq.com]
+ * @date 2021/8/11
+ */
+
+public interface EmployeeService {
+
+    //查询所有员工
+    List<Employee> findAll();
+
+    //根据id删除员工
+    Boolean deleteByEmployeeId(Integer employeeId);
+
+    //添加新员工
+    Boolean insertEmployee(Employee employee);
+
+    //查询员工数
+    Integer selectTotalCount();
+
+}

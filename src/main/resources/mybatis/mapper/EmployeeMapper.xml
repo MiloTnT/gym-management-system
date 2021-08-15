@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.EmployeeMapper">
+
+    <select id="findAll" resultType="employee">
+        SELECT *
+        FROM employee
+    </select>
+
+    <delete id="deleteByEmployeeId" parameterType="java.lang.Integer">
+        DELETE
+        FROM employee
+        WHERE employee_id = #{employeeId}
+    </delete>
+
+    <insert id="insertEmployee" parameterType="employee">
+        INSERT INTO employee (employee_id, employee_account, employee_password, employee_name, employee_gender,
+                              employee_age, entry_time, staff, employee_message)
+        VALUES (#{employeeId}, #{employeeAccount}, #{employeePassword}, #{employeeName}, #{employeeGender},
+                #{employeeAge}, #{entryTime}, #{staff}, #{employeeMessage})
+    </insert>
+
+    <select id="selectTotalCount" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM employee
+    </select>
+
+</mapper>

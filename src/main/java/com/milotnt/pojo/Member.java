@@ -14,7 +14,7 @@ public class Member {
     private Integer memberAge;
     private Integer memberHeight;
     private Integer memberWeight;
-    private Integer memberPhone;
+    private Long memberPhone;
     private Integer cardId;
     private String cardTime;
     private Integer cardClass;
@@ -84,11 +84,11 @@ public class Member {
         this.memberWeight = memberWeight;
     }
 
-    public Integer getMemberPhone() {
+    public Long getMemberPhone() {
         return memberPhone;
     }
 
-    public void setMemberPhone(Integer memberPhone) {
+    public void setMemberPhone(Long memberPhone) {
         this.memberPhone = memberPhone;
     }
 

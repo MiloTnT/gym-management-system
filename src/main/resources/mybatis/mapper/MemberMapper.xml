@@ -18,7 +18,7 @@
                 #{cardTime}, #{cardClass}, #{cardNextClass})
     </insert>
 
-    <update id="updateMemberByMemberId" parameterType="member">
+    <update id="updateMemberByMemberAccount" parameterType="member">
         UPDATE member
         SET member_id       = #{memberId},
             member_account  = #{memberAccount},
@@ -32,7 +32,7 @@
             card_id         = #{cardId},
             card_class      = #{cardClass},
             card_next_class = #{cardNextClass}
-        WHERE member_id = #{memberId}
+        WHERE member_account = #{memberAccount}
     </update>
 
     <select id="selectByAccountAndPassword" resultType="member">

@@ -20,7 +20,7 @@ public interface MemberMapper {
     Boolean insertMember(Member member);
 
     //根据id修改会员信息
-    Boolean updateMemberByMemberId(Member member);
+    Boolean updateMemberByMemberAccount(Member member);
 
     //查询会员账号密码
     Member selectByAccountAndPassword(Member member);
@@ -32,6 +32,6 @@ public interface MemberMapper {
     Integer selectTotalCount();
 
     //根据会员账号查询会员
-    Member selectByMemberAccount(Integer memberAccount);
+    List<Member> selectByMemberAccount(Integer memberAccount);
 
 }

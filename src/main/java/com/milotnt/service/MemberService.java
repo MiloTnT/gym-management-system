@@ -18,7 +18,7 @@ public interface MemberService {
     Boolean insertMember(Member member);
 
     //根据id修改会员信息
-    Boolean updateMemberByMemberId(Member member);
+    Boolean updateMemberByMemberAccount(Member member);
 
     //查询会员账号密码（登录）
     Member checkLogin(Member member);
@@ -31,6 +31,6 @@ public interface MemberService {
     Integer selectTotalCount();
 
     //根据会员账号查询会员
-    Member selectByMemberAccount(Integer memberAccount);
+    List<Member> selectByMemberAccount(Integer memberAccount);
 
 }

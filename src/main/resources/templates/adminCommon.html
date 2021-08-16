@@ -58,29 +58,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-id-card"></i></div>
                     会员卡查询
                 </a>
-                <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                    会员信息查询
-                </a>
                 <!--管理区域-->
                 <div class="sb-sidenav-menu-heading">管理</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMember"
-                   aria-expanded="false" aria-controls="collapseMember">
+                <a class="nav-link" th:href="@{/member/selMember}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     会员管理
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseMember" aria-labelledby="headingOne"
-                     data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-user-edit"></i>&nbsp;修改会员信息</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-user-plus"></i>&nbsp;新增会员</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-user-minus"></i>&nbsp;删除会员</a>
-                    </nav>
-                </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmployee"
                    aria-expanded="false" aria-controls="collapseEmployee">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-id-card-alt"></i></div>
                     员工管理
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -92,6 +78,10 @@
                         <a class="nav-link" href="layout-static.html"><i class="fas fa-user-minus"></i>&nbsp;删除员工</a>
                     </nav>
                 </div>
+                <a class="nav-link" th:href="@{/equipment/selEquipment}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table-tennis"></i></div>
+                    器材管理
+                </a>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseClass"
                    aria-expanded="false" aria-controls="collapseClass">
                     <div class="sb-nav-link-icon"><i class="fas fa-calendar-alt"></i></div>
@@ -107,10 +97,6 @@
                         <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-minus"></i>&nbsp;删除课程</a>
                     </nav>
                 </div>
-
-                <a class="nav-link" th:href="@{/equipment/selEquipment}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table-tennis"></i></div>器材管理
-                </a>
             </div>
         </div>
 

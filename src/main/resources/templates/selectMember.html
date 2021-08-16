@@ -9,44 +9,54 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">器材管理</h1>
+                <h1 class="mt-4">会员管理</h1>
 
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a th:href="@{/}">主页</a></li>
-                    <li class="breadcrumb-item active">器材管理</li>
+                    <li class="breadcrumb-item active">会员管理</li>
                 </ol>
 
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        器材信息表
+                        会员信息表
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
                             <tr>
-                                <th>器材id</th>
-                                <th>器材名称</th>
-                                <th>器材位置</th>
-                                <th>器材状态</th>
-                                <th>器材备注信息</th>
+                                <th>会员账号/卡号</th>
+                                <th>姓名</th>
+                                <th>办卡时间</th>
+                                <th>性别</th>
+                                <th>年龄</th>
+                                <th>联系方式</th>
+                                <th>身高</th>
+                                <th>体重</th>
+                                <th>购买课时</th>
+                                <th>剩余课时</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr th:each="equ:${equipmentList}">
-                                <td th:text="${equ.equipmentId}">id</td>
-                                <td th:text="${equ.equipmentName}">name</td>
-                                <td th:text="${equ.equipmentLocation}">location</td>
-                                <td th:text="${equ.equipmentStatus}">status</td>
-                                <td th:text="${equ.equipmentMessage}">message</td>
+                            <tr th:each="mem:${memberList}">
+                                <td th:text="${mem.memberAccount}">会员账号/卡号</td>
+                                <td th:text="${mem.memberName}">姓名</td>
+                                <td th:text="${mem.cardTime}">办卡时间</td>
+                                <td th:text="${mem.memberGender}">性别</td>
+                                <td th:text="${mem.memberAge}">年龄</td>
+                                <td th:text="${mem.memberPhone}">联系方式</td>
+                                <td th:text="${mem.memberHeight}">身高</td>
+                                <td th:text="${mem.memberWeight}">体重</td>
+                                <td th:text="${mem.cardClass}">购买课时</td>
+                                <td th:text="${mem.cardNextClass}">剩余课时</td>
                                 <td>
-                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}">
+                                    <a th:href="@{/member/toUpdateMember(memberAccount=${mem.memberAccount})}">
                                         <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
                                     </a>
                                     <a></a>
-                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}">
+                                    <a th:href="@{/member/delMember(memberId=${mem.memberId})}">
                                         <input type="button" class="btn btn-sm btn-outline-danger" value="删除">
                                     </a>
                                 </td>
@@ -56,8 +66,8 @@
                     </div>
                 </div>
                 <div style="text-align:center;margin-top:20px;margin-bottom:20px">
-                    <a th:href="@{/equipment/toAddEquipment}">
-                        <input type="button" class="btn btn-outline-success" value="添加器材信息">
+                    <a th:href="@{/member/toAddMember}">
+                        <input type="button" class="btn btn-outline-success" value="添加会员信息">
                     </a>
                 </div>
             </div>

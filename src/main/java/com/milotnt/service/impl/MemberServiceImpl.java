@@ -30,8 +30,8 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Boolean updateMemberByMemberId(Member member) {
-        return memberMapper.updateMemberByMemberId(member);
+    public Boolean updateMemberByMemberAccount(Member member) {
+        return memberMapper.updateMemberByMemberAccount(member);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member selectByMemberAccount(Integer memberAccount) {
+    public List<Member> selectByMemberAccount(Integer memberAccount) {
         return memberMapper.selectByMemberAccount(memberAccount);
     }
 }

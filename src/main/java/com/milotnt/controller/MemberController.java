@@ -110,7 +110,7 @@ public class MemberController {
     //跳转会员卡查询页面
     @RequestMapping("/toSelByCard")
     public String toSelectByCardId() {
-        return "selectByCardId";
+        return "selectByMemberAccount";
     }
 
     //根据会员卡号查询
@@ -123,7 +123,7 @@ public class MemberController {
             String message = "会员卡号不存在！";
             model.addAttribute("noMessage", message);
         }
-        return "selectByCardId";
+        return "selectByMemberAccount";
     }
 
     //用户登录判断

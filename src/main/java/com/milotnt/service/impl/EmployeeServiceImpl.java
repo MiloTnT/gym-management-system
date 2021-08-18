@@ -35,6 +35,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Boolean updateMemberByEmployeeAccount(Employee employee) {
+        return employeeMapper.updateMemberByEmployeeAccount(employee);
+    }
+
+    @Override
+    public List<Employee> selectByEmployeeAccount(Integer employeeAccount) {
+        return employeeMapper.selectByEmployeeAccount(employeeAccount);
+    }
+
+    @Override
     public Integer selectTotalCount() {
         return employeeMapper.selectTotalCount();
     }

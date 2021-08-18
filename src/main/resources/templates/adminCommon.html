@@ -26,7 +26,7 @@
     <!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
         <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+            <input class="form-control" type="text" placeholder="搜索" aria-label="搜索"
                    aria-describedby="btnNavbarSearch"/>
             <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
         </div>
@@ -37,10 +37,6 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!"><i class="fas fa-cog"></i>&nbsp;设置</a></li>
-                <li>
-                    <hr class="dropdown-divider"/>
-                </li>
                 <li><a class="dropdown-item" href="#!"><i class="fas fa-sign-out-alt"></i>&nbsp;退出登录</a></li>
             </ul>
         </li>
@@ -64,20 +60,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     会员管理
                 </a>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmployee"
-                   aria-expanded="false" aria-controls="collapseEmployee">
+                <a class="nav-link" th:href="@{/employee/selEmployee}">
                     <div class="sb-nav-link-icon"><i class="fas fa-id-card-alt"></i></div>
                     员工管理
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseEmployee" aria-labelledby="headingTwo"
-                     data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-id-card-alt"></i>&nbsp;员工信息查询</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-user-plus"></i>&nbsp;新增员工</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-user-minus"></i>&nbsp;删除员工</a>
-                    </nav>
-                </div>
                 <a class="nav-link" th:href="@{/equipment/selEquipment}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table-tennis"></i></div>
                     器材管理
@@ -97,6 +83,12 @@
                         <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-minus"></i>&nbsp;删除课程</a>
                     </nav>
                 </div>
+                <!--链接区域-->
+                <div class="sb-sidenav-menu-heading">链接</div>
+                <a class="nav-link" href="#">
+                    <div class="sb-nav-link-icon"><i class="fab fa-github"></i></div>
+                    项目地址
+                </a>
             </div>
         </div>
 

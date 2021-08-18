@@ -22,6 +22,23 @@
                 #{employeeAge}, #{entryTime}, #{staff}, #{employeeMessage})
     </insert>
 
+    <update id="updateMemberByEmployeeAccount" parameterType="employee">
+        UPDATE employee
+        SET employee_account = #{employeeAccount},
+            employee_name    = #{employeeName},
+            employee_gender  = #{employeeGender},
+            employee_age     = #{employeeAge},
+            staff            = #{staff},
+            employee_message=#{employeeMessage}
+        WHERE employee_account = #{employeeAccount}
+    </update>
+
+    <select id="selectByEmployeeAccount" parameterType="java.lang.Integer" resultType="employee">
+        SELECT *
+        FROM employee
+        WHERE employee_account = #{employeeAccount}
+    </select>
+
     <select id="selectTotalCount" resultType="java.lang.Integer">
         SELECT count(*)
         FROM employee

@@ -61,24 +61,20 @@ public class MemberController {
         //初始密码
         String password = "123456";
 
+        //获取当前日期
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String dateNowStr = simpleDateFormat.format(date);
+        String nowDay = simpleDateFormat.format(date);
 
         Integer nextClass = member.getCardClass();
 
         member.setMemberAccount(account);
         member.setCardId(account);
         member.setMemberPassword(password);
-        member.setCardTime(dateNowStr);
+        member.setCardTime(nowDay);
         member.setCardNextClass(nextClass);
 
-        Boolean flagAdd = memberService.insertMember(member);
-        if (flagAdd == true) {
-            System.out.println("新增会员成功！");
-        } else if (flagAdd == false) {
-            System.out.println("新增会员失败！");
-        }
+        memberService.insertMember(member);
 
         return "redirect:selMember";
 

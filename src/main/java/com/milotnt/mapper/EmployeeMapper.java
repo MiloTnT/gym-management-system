@@ -22,6 +22,12 @@ public interface EmployeeMapper {
     //添加新员工
     Boolean insertEmployee(Employee employee);
 
+    //根据员工账号修改会员信息
+    Boolean updateMemberByEmployeeAccount(Employee employee);
+
+    //根据员工账号查询员工
+    List<Employee> selectByEmployeeAccount(Integer employeeAccount);
+
     //查询员工数
     Integer selectTotalCount();
 

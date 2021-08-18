@@ -20,8 +20,7 @@
 
     <update id="updateMemberByMemberAccount" parameterType="member">
         UPDATE member
-        SET member_id       = #{memberId},
-            member_account  = #{memberAccount},
+        SET member_account  = #{memberAccount},
             member_password = #{memberPassword},
             member_name     = #{memberName},
             member_gender   = #{memberGender},
@@ -29,7 +28,6 @@
             member_height   = #{memberHeight},
             member_weight   = #{memberWeight},
             member_phone    = #{memberPhone},
-            card_id         = #{cardId},
             card_class      = #{cardClass},
             card_next_class = #{cardNextClass}
         WHERE member_account = #{memberAccount}

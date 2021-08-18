@@ -19,7 +19,7 @@ public interface MemberMapper {
     //新增会员信息
     Boolean insertMember(Member member);
 
-    //根据id修改会员信息
+    //根据会员账号修改会员信息
     Boolean updateMemberByMemberAccount(Member member);
 
     //查询会员账号密码

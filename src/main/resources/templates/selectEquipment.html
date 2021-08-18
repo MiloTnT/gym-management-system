@@ -26,10 +26,10 @@
                             <thead>
                             <tr>
                                 <th>器材id</th>
-                                <th>器材名称</th>
-                                <th>器材位置</th>
-                                <th>器材状态</th>
-                                <th>器材备注信息</th>
+                                <th>名称</th>
+                                <th>位置</th>
+                                <th>状态</th>
+                                <th>备注信息</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -42,12 +42,14 @@
                                 <td th:text="${equ.equipmentStatus}">status</td>
                                 <td th:text="${equ.equipmentMessage}">message</td>
                                 <td>
-                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}">
+                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}"
+                                       style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
                                     </a>
-                                    <a></a>
-                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}">
-                                        <input type="button" class="btn btn-sm btn-outline-danger" value="删除">
+                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="删除">
                                     </a>
                                 </td>
                             </tr>
@@ -67,5 +69,15 @@
 </div>
 
 <div th:include="adminCommon::common-scripts"></div>
+<script>
+    function del() {
+        let msg = "确定要删除吗？";
+        if (confirm(msg) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

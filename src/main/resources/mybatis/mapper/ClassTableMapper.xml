@@ -9,7 +9,7 @@
         FROM class_table
     </select>
 
-    <delete id="deleteByClassId" parameterType="java.lang.Integer">
+    <delete id="deleteClassByClassId" parameterType="java.lang.Integer">
         DELETE
         FROM class_table
         WHERE class_id = #{classId}

@@ -48,12 +48,14 @@
     <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
+
                 <!--快速查询区域-->
                 <div class="sb-sidenav-menu-heading">快速查询</div>
                 <a class="nav-link" th:href="@{/member/toSelByCard}">
                     <div class="sb-nav-link-icon"><i class="fas fa-id-card"></i></div>
                     会员卡查询
                 </a>
+
                 <!--管理区域-->
                 <div class="sb-sidenav-menu-heading">管理</div>
                 <a class="nav-link" th:href="@{/member/selMember}">
@@ -61,28 +63,18 @@
                     会员管理
                 </a>
                 <a class="nav-link" th:href="@{/employee/selEmployee}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-id-card-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
                     员工管理
                 </a>
                 <a class="nav-link" th:href="@{/equipment/selEquipment}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table-tennis"></i></div>
                     器材管理
                 </a>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseClass"
-                   aria-expanded="false" aria-controls="collapseClass">
+                <a class="nav-link" th:href="@{/class/selClass}">
                     <div class="sb-nav-link-icon"><i class="fas fa-calendar-alt"></i></div>
                     课程管理
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseClass" aria-labelledby="headingThree"
-                     data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-day"></i>&nbsp;课程信息查询</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-check"></i>&nbsp;课程报名信息查询</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-plus"></i>&nbsp;新增课程</a>
-                        <a class="nav-link" href="layout-static.html"><i class="fas fa-calendar-minus"></i>&nbsp;删除课程</a>
-                    </nav>
-                </div>
+
                 <!--链接区域-->
                 <div class="sb-sidenav-menu-heading">链接</div>
                 <a class="nav-link" href="#">

@@ -13,6 +13,7 @@
 
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a th:href="@{/}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/equipment/selEquipment}">器材管理</a></li>
                     <li class="breadcrumb-item active">添加器材</li>
                 </ol>
 
@@ -28,7 +29,7 @@
 
                             <tr>
                                 <td text-align="center">器材位置：</td>
-                                <td><input type="text" class="form-control" placeholder="位置" name="equipmentLocation">
+                                <td><input type="text" class="form-control" placeholder="x号房间" name="equipmentLocation">
                                 </td>
                             </tr>
                             <tr>
@@ -41,12 +42,10 @@
                                 <td><input type="text" class="form-control" placeholder="备注" name="equipmentMessage">
                                     &nbsp;
                             </tr>
-                            <tr>
-                                <td colspan="2" align="center">
-                                    <input type="submit" class="btn btn-outline-success" value="添加">
-                                </td>
-                            </tr>
                         </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
                     </form>
                 </div>
             </div>

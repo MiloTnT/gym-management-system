@@ -15,6 +15,7 @@
 
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a th:href="@{/}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/employee/selEmployee}">员工管理</a></li>
                     <li class="breadcrumb-item active">添加员工</li>
                 </ol>
 
@@ -55,12 +56,10 @@
                                 <td><input type="text" class="form-control" placeholder="备注信息" name="employeeMessage">
                                     &nbsp;
                             </tr>
-                            <tr>
-                                <td colspan="2" align="center">
-                                    <input type="submit" class="btn btn-outline-success" value="添加">
-                                </td>
-                            </tr>
                         </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
                     </form>
                 </div>
             </div>

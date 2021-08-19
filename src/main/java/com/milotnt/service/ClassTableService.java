@@ -15,7 +15,7 @@ public interface ClassTableService {
     List<ClassTable> findAll();
 
     //根据id删除课程
-    Boolean deleteByClassId(Integer classId);
+    Boolean deleteClassByClassId(Integer classId);
 
     //添加课程
     Boolean insertClass(ClassTable classTable);

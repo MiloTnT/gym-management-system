@@ -25,8 +25,8 @@ public class ClassTableServiceImpl implements ClassTableService {
     }
 
     @Override
-    public Boolean deleteByClassId(Integer classId) {
-        return classTableMapper.deleteByClassId(classId);
+    public Boolean deleteClassByClassId(Integer classId) {
+        return classTableMapper.deleteClassByClassId(classId);
     }
 
     @Override

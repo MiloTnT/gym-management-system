@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="gym-management-system"/>
     <meta name="author" content="ZhangMing"/>
-    <title>健身房管理系统-管理员登录</title>
+    <title>健身房管理系统-会员登录</title>
     <link href="/static/css/styles.css" th:href="@{css/styles.css}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
             crossorigin="anonymous"></script>
     <script type="text/javascript">
         function checkSubmit(loginForm) {
-            if (loginForm.adminAccount.value == '') {
+            if (loginForm.memberAccount.value == '') {
                 alert("请输入账号");
-                loginForm.adminAccount.focus();
+                loginForm.memberAccount.focus();
                 return false;
             }
-            if (loginForm.adminPassword.value == '') {
+            if (loginForm.memberPassword.value == '') {
                 alert("请输入密码");
-                loginForm.adminPassword.focus();
+                loginForm.memberPassword.focus();
                 return false;
             }
             return true;
@@ -35,18 +35,18 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-5">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">管理员登录</h3></div>
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">会员登录</h3></div>
                             <div class="card-body">
-                                <form th:action="@{/adminLogin}" method="post" name="loginForm"
+                                <form th:action="@{/memberLogin}" method="post" name="loginForm"
                                       onsubmit="return checkSubmit(this)">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputAccount" name="adminAccount" type="account"
+                                        <input class="form-control" id="inputAccount" name="memberAccount" type="account"
                                                placeholder="Account"
                                                onkeypress="return event.keyCode>=48&&event.keyCode<=57"/>
                                         <label for="inputAccount">账号</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputPassword" name="adminPassword"
+                                        <input class="form-control" id="inputPassword" name="memberPassword"
                                                type="password"
                                                placeholder="Password"/>
                                         <label for="inputPassword">密码</label>
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                         <input type="submit" class="btn btn-success" value="登录">
-                                        <a class="btn btn-primary" th:href="@{/toMemberLogin}">转到会员登录</a>
+                                        <a class="btn btn-primary" th:href="@{/}">转到管理员登录</a>
                                     </div>
                                 </form>
                                 <div th:text="${msg}" style="margin-top: 20px;text-align: center;color: red"></div>

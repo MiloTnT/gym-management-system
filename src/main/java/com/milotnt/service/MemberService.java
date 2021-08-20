@@ -21,7 +21,7 @@ public interface MemberService {
     Boolean updateMemberByMemberAccount(Member member);
 
     //查询会员账号密码（登录）
-    Member checkLogin(Member member);
+    Member memberLogin(Member member);
     //Member selectByAccountAndPassword(Member member);
 
     //根据id删除会员信息

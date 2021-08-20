@@ -1,9 +1,6 @@
 package com.milotnt.controller;
 
 import com.milotnt.pojo.Member;
-import com.milotnt.service.AdminService;
-import com.milotnt.service.EmployeeService;
-import com.milotnt.service.EquipmentService;
 import com.milotnt.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,12 +23,6 @@ public class MemberController {
 
     @Autowired
     private MemberService memberService;
-    @Autowired
-    private AdminService adminService;
-    @Autowired
-    private EmployeeService employeeService;
-    @Autowired
-    private EquipmentService equipmentService;
 
     //查询会员
     @RequestMapping("/selMember")

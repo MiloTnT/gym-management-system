@@ -35,7 +35,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member checkLogin(Member member) {
+    public Member memberLogin(Member member) {
         return memberMapper.selectByAccountAndPassword(member);
     }
 

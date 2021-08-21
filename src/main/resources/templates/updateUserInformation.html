@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="userCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="userCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="userCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">编辑个人信息</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toUserMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/user/toUserInfo}">个人信息</a></li>
+                    <li class="breadcrumb-item active">编辑个人信息</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/user/updateInfo}" method="post" name="updateForm"
+                          onsubmit="return beforeSubmit(this)">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">会员账号/卡号：</td>
+                                <td><input type="text" class="form-control" readonly="readonly"
+                                           th:value="${member.memberAccount}" name="memberAccount">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">姓名：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberName}"
+                                           name="memberName"></td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">密码：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberPassword}"
+                                           name="memberPassword">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">性别：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberGender}"
+                                           name="memberGender">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">年龄：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberAge}"
+                                           name="memberAge">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">联系方式：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberPhone}"
+                                           name="memberPhone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">身高：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberHeight}"
+                                           name="memberHeight">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">体重：</td>
+                                <td><input type="text" class="form-control" th:value="${member.memberWeight}"
+                                           name="memberWeight">
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center;margin-bottom:15px">
+                            <input type="submit" class="btn btn-outline-success" value="确认修改">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="userCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="userCommon::common-scripts"></div>
+<script type="text/javascript">
+    function beforeSubmit(updateForm) {
+        let phone = /^[1][3,4,5,7,8,9][0-9]{9}$/;//设置手机号正则表达式
+        if (!phone.test(updateForm.memberPhone.value)) {
+            alert("手机号码错误！");
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

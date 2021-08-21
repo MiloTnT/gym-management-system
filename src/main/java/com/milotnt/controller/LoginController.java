@@ -37,9 +37,9 @@ public class LoginController {
     }
 
     //跳转会员登录页面
-    @RequestMapping("/toMemberLogin")
-    public String toMemberLogin() {
-        return "memberLogin";
+    @RequestMapping("/toUserLogin")
+    public String toUserLogin() {
+        return "userLogin";
     }
 
     //管理员登录
@@ -74,21 +74,21 @@ public class LoginController {
     }
 
     //会员登录
-    @RequestMapping("/memberLogin")
-    public String memberLogin(Member member, Model model, HttpSession session) {
-        Member member1 = memberService.memberLogin(member);
+    @RequestMapping("/userLogin")
+    public String userLogin(Member member, Model model, HttpSession session) {
+        Member member1 = memberService.userLogin(member);
         if (member1 != null) {
             model.addAttribute("member", member1);
-            session.setAttribute("member", member1);
-            return "memberMain";
+            session.setAttribute("user", member1);
+            return "userMain";
         }
         model.addAttribute("msg", "您输入的账号或密码有误，请重新输入!");
-        return "memberLogin";
+        return "userLogin";
     }
 
-    //回到管理员主页
+    //跳转管理员主页
     @RequestMapping("/toAdminMain")
-    public String toAdminMain(HttpSession session, Model model) {
+    public String toAdminMain(Model model, HttpSession session) {
         Integer memberTotal = (Integer) session.getAttribute("memberTotal");
         Integer employeeTotal = (Integer) session.getAttribute("employeeTotal");
         Integer humanTotal = (Integer) session.getAttribute("humanTotal");
@@ -98,6 +98,14 @@ public class LoginController {
         model.addAttribute("humanTotal", humanTotal);
         model.addAttribute("equipmentTotal", equipmentTotal);
         return "adminMain";
+    }
+
+    //跳转会员主页
+    @RequestMapping("/toUserMain")
+    public String toUserMain(Model model, HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
+        return "userMain";
     }
 
 }

@@ -36,8 +36,8 @@
                                 </tr>
                                 <tr>
                                     <td text-align="center">密码：</td>
-                                    <td><input type="text" class="form-control" placeholder="密码由用户自行修改"
-                                               name="memberPassword" disabled="disabled">
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${mem.memberPassword}" name="memberPassword">
                                     </td>
                                 </tr>
                                 <tr>
@@ -50,44 +50,42 @@
                                     <td text-align="center">年龄：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.memberAge}"
                                                name="memberAge">
-                                        &nbsp;
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">联系方式：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.memberPhone}"
                                                name="memberPhone">
-                                        &nbsp;
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">身高：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.memberHeight}"
                                                name="memberHeight">
-                                        &nbsp;
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">体重：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.memberWeight}"
                                                name="memberWeight">
-                                        &nbsp;
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">购买课时：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.cardClass}"
                                                name="cardClass">
-                                        &nbsp;
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">剩余课时：</td>
                                     <td><input type="text" class="form-control" th:value="${mem.cardNextClass}"
                                                name="cardNextClass">
-                                        &nbsp;
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="center">
-                                        <input type="submit" class="btn btn-outline-success" value="确认修改">
                                     </td>
                                 </tr>
                             </table>
+                            <div style="text-align:center;margin-bottom:15px">
+                                <input type="submit" class="btn btn-outline-success" value="确认修改">
+                            </div>
                         </div>
                     </form>
                 </div>

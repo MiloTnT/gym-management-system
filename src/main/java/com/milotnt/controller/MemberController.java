@@ -113,8 +113,4 @@ public class MemberController {
         return "selectByMemberAccount";
     }
 
-    //用户登录判断
-    //管理员登录
-    //回到主页
-
 }

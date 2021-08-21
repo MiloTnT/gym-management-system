@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="gym-management-system"/>
     <meta name="author" content="ZhangMing"/>
-    <title>健身房管理系统-管理员</title>
+    <title>健身房管理系统-用户</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="/static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -37,7 +37,7 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" th:href="@{/}"><i class="fas fa-sign-out-alt"></i>&nbsp;退出登录</a></li>
+                <li><a class="dropdown-item" th:href="@{/toUserLogin}"><i class="fas fa-sign-out-alt"></i>&nbsp;退出登录</a></li>
             </ul>
         </li>
     </ul>
@@ -49,31 +49,23 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
 
-                <!--快速查询区域-->
-                <div class="sb-sidenav-menu-heading">快速查询</div>
-                <a class="nav-link" th:href="@{/member/toSelByCard}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-id-card"></i></div>
-                    会员卡查询
-                </a>
-
                 <!--管理区域-->
                 <div class="sb-sidenav-menu-heading">管理</div>
-                <a class="nav-link" th:href="@{/member/selMember}">
+                <a class="nav-link" th:href="@{/user/toUserInfo}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                    会员管理
+                    个人信息
                 </a>
-                <a class="nav-link" th:href="@{/employee/selEmployee}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
-                    员工管理
-                </a>
-                <a class="nav-link" th:href="@{/equipment/selEquipment}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table-tennis"></i></div>
-                    器材管理
-                </a>
-                <a class="nav-link" th:href="@{/class/selClass}">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-calendar-alt"></i></div>
                     课程管理
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" th:href="@{/user/toApplyClass}">报名选课</a>
+                        <a class="nav-link" th:href="@{/user/toUserClass}">我的课程</a>
+                    </nav>
+                </div>
 
                 <!--链接区域-->
                 <div class="sb-sidenav-menu-heading">链接</div>
@@ -86,7 +78,7 @@
 
         <div class="sb-sidenav-footer">
             <div class="small">你好！</div>
-            管理员
+            尊敬的会员
         </div>
     </nav>
 </div>

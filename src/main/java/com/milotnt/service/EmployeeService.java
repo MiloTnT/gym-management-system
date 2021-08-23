@@ -14,8 +14,8 @@ public interface EmployeeService {
     //查询所有员工
     List<Employee> findAll();
 
-    //根据id删除员工
-    Boolean deleteByEmployeeId(Integer employeeId);
+    //根据员工账号删除员工
+    Boolean deleteByEmployeeAccount(Integer employeeAccount);
 
     //添加新员工
     Boolean insertEmployee(Employee employee);

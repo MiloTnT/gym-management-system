@@ -25,8 +25,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Boolean deleteByEmployeeId(Integer employeeId) {
-        return employeeMapper.deleteByEmployeeId(employeeId);
+    public Boolean deleteByEmployeeAccount(Integer employeeAccount) {
+        return employeeMapper.deleteByEmployeeAccount(employeeAccount);
     }
 
     @Override

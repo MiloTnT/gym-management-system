@@ -9,16 +9,16 @@
         FROM employee
     </select>
 
-    <delete id="deleteByEmployeeId" parameterType="java.lang.Integer">
+    <delete id="deleteByEmployeeAccount" parameterType="java.lang.Integer">
         DELETE
         FROM employee
-        WHERE employee_id = #{employeeId}
+        WHERE employee_account = #{employeeAccount}
     </delete>
 
     <insert id="insertEmployee" parameterType="employee">
-        INSERT INTO employee (employee_id, employee_account, employee_password, employee_name, employee_gender,
+        INSERT INTO employee (employee_account, employee_name, employee_gender,
                               employee_age, entry_time, staff, employee_message)
-        VALUES (#{employeeId}, #{employeeAccount}, #{employeePassword}, #{employeeName}, #{employeeGender},
+        VALUES (#{employeeAccount}, #{employeeName}, #{employeeGender},
                 #{employeeAge}, #{entryTime}, #{staff}, #{employeeMessage})
     </insert>
 

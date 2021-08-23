@@ -6,23 +6,14 @@ package com.milotnt.pojo;
  */
 public class Admin {
 
-    private Integer adminId;
-    private String adminAccount;
+    private Integer adminAccount;
     private String adminPassword;
 
-    public Integer getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Integer adminId) {
-        this.adminId = adminId;
-    }
-
-    public String getAdminAccount() {
+    public Integer getAdminAccount() {
         return adminAccount;
     }
 
-    public void setAdminAccount(String adminAccount) {
+    public void setAdminAccount(Integer adminAccount) {
         this.adminAccount = adminAccount;
     }
 
@@ -37,8 +28,7 @@ public class Admin {
     @Override
     public String toString() {
         return "Admin{" +
-                "adminId=" + adminId +
-                ", adminAccount='" + adminAccount + '\'' +
+                "adminAccount=" + adminAccount +
                 ", adminPassword='" + adminPassword + '\'' +
                 '}';
     }

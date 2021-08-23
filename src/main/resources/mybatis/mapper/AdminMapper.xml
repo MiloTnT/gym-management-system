@@ -8,7 +8,7 @@
         SELECT *
         FROM admin
         WHERE admin_account = #{adminAccount}
-          AND admin_Password = #{adminPassword}
+          AND admin_password = #{adminPassword}
     </select>
 
 </mapper>

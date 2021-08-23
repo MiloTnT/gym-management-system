@@ -6,9 +6,7 @@ package com.milotnt.pojo;
  */
 public class Employee {
 
-    private Integer employeeId;
     private Integer employeeAccount;
-    private String employeePassword;
     private String employeeName;
     private String employeeGender;
     private Integer employeeAge;
@@ -19,10 +17,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer employeeId, Integer employeeAccount, String employeePassword, String employeeName, String employeeGender, Integer employeeAge, String entryTime, String staff, String employeeMessage) {
-        this.employeeId = employeeId;
+    public Employee(Integer employeeAccount, String employeeName, String employeeGender, Integer employeeAge, String entryTime, String staff, String employeeMessage) {
         this.employeeAccount = employeeAccount;
-        this.employeePassword = employeePassword;
         this.employeeName = employeeName;
         this.employeeGender = employeeGender;
         this.employeeAge = employeeAge;
@@ -31,13 +27,6 @@ public class Employee {
         this.employeeMessage = employeeMessage;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
 
     public Integer getEmployeeAccount() {
         return employeeAccount;
@@ -45,14 +34,6 @@ public class Employee {
 
     public void setEmployeeAccount(Integer employeeAccount) {
         this.employeeAccount = employeeAccount;
-    }
-
-    public String getEmployeePassword() {
-        return employeePassword;
-    }
-
-    public void setEmployeePassword(String employeePassword) {
-        this.employeePassword = employeePassword;
     }
 
     public String getEmployeeName() {
@@ -106,9 +87,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId=" + employeeId +
                 ", employeeAccount=" + employeeAccount +
-                ", employeePassword='" + employeePassword + '\'' +
                 ", employeeName='" + employeeName + '\'' +
                 ", employeeGender='" + employeeGender + '\'' +
                 ", employeeAge=" + employeeAge +

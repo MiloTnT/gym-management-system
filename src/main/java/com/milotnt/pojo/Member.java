@@ -6,7 +6,6 @@ package com.milotnt.pojo;
  */
 public class Member {
 
-    private Integer memberId;
     private Integer memberAccount;
     private String memberPassword;
     private String memberName;
@@ -15,18 +14,9 @@ public class Member {
     private Integer memberHeight;
     private Integer memberWeight;
     private Long memberPhone;
-    private Integer cardId;
     private String cardTime;
     private Integer cardClass;
     private Integer cardNextClass;
-
-    public Integer getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Integer memberId) {
-        this.memberId = memberId;
-    }
 
     public Integer getMemberAccount() {
         return memberAccount;
@@ -92,14 +82,6 @@ public class Member {
         this.memberPhone = memberPhone;
     }
 
-    public Integer getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(Integer cardId) {
-        this.cardId = cardId;
-    }
-
     public String getCardTime() {
         return cardTime;
     }
@@ -127,7 +109,6 @@ public class Member {
     @Override
     public String toString() {
         return "Member{" +
-                "memberId=" + memberId +
                 ", memberAccount=" + memberAccount +
                 ", memberPassword='" + memberPassword + '\'' +
                 ", memberName='" + memberName + '\'' +
@@ -136,7 +117,6 @@ public class Member {
                 ", memberHeight=" + memberHeight +
                 ", memberWeight=" + memberWeight +
                 ", memberPhone=" + memberPhone +
-                ", cardId=" + cardId +
                 ", cardTime='" + cardTime + '\'' +
                 ", cardClass=" + cardClass +
                 ", cardNextClass=" + cardNextClass +

@@ -40,8 +40,8 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Boolean deleteByMemberId(Integer memberId) {
-        return memberMapper.deleteByMemberId(memberId);
+    public Boolean deleteByMemberAccount(Integer memberAccount) {
+        return memberMapper.deleteByMemberAccount(memberAccount);
     }
 
     @Override

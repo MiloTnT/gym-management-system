@@ -60,7 +60,6 @@ public class MemberController {
         Integer nextClass = member.getCardClass();
 
         member.setMemberAccount(account);
-        member.setCardId(account);
         member.setMemberPassword(password);
         member.setCardTime(nowDay);
         member.setCardNextClass(nextClass);
@@ -73,8 +72,8 @@ public class MemberController {
 
     //删除会员
     @RequestMapping("/delMember")
-    public String deleteMember(Integer memberId) {
-        memberService.deleteByMemberId(memberId);
+    public String deleteMember(Integer memberAccount) {
+        memberService.deleteByMemberAccount(memberAccount);
         return "redirect:selMember";
     }
 

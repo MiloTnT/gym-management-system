@@ -65,8 +65,8 @@ public class EmployeeController {
 
     //删除员工
     @RequestMapping("/delEmployee")
-    public String deleteEmployee(Integer employeeId) {
-        employeeService.deleteByEmployeeId(employeeId);
+    public String deleteEmployee(Integer employeeAccount) {
+        employeeService.deleteByEmployeeAccount(employeeAccount);
         return "redirect:selEmployee";
     }
 

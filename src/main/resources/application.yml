@@ -9,8 +9,8 @@ spring:
     cache: false
 
 
-server:
-  port: 8888
+#server:
+#  port: 8888
 
 mybatis:
   #  config-location: classpath:mybatis/mybatis-config.xml

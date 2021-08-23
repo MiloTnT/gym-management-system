@@ -54,7 +54,6 @@ public class UserController {
     public String updateUserInformation(HttpSession session, Member member) {
         Member member1 = (Member) session.getAttribute("user");
 
-        member.setMemberId(member1.getMemberId());
         member.setMemberAccount(member1.getMemberAccount());
         member.setCardClass(member1.getCardClass());
         member.setCardTime(member1.getCardTime());

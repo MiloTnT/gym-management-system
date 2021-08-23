@@ -32,6 +32,7 @@
 ## 管理员页面
 ![管理员主页](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.19.58.png)
 ![会员管理页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.20.48.png)
+![添加会员页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.46.05.png)
 
 ## 会员页面
 ![个人信息页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.37.07.png)

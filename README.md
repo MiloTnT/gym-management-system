@@ -34,11 +34,11 @@
 ![会员管理页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.20.48.png)
 
 ## 会员页面
-![个人信息页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.21.39.png)
+![个人信息页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.37.07.png)
 ![我的课程页面](https://raw.githubusercontent.com/MiloTnT/picture-bed/master/%E6%88%AA%E5%B1%8F2021-08-23%2019.21.50.png)
 
 # 四、总结
-第一次做项目，有很多想实现的功能碍于个人能力不够无法实现，继续保持学习。写本文的同时也是对这一阶段学习的总结。
+第一次做项目，有很多想实现的功能碍于个人能力不够无法实现，基础也不牢固，继续保持学习。写本文的同时也是对这一阶段学习的总结。
 
 
 

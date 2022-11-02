@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.MemberMapper">
+
+    <select id="findAll" resultType="member">
+        SELECT *
+        FROM member
+    </select>
+
+    <insert id="insertMember" parameterType="member">
+        INSERT INTO member (member_account, member_name, member_gender, member_age, member_height,
+                            member_weight, member_phone, card_time, card_class,
+                            card_next_class)
+        VALUES (#{memberAccount}, #{memberName}, #{memberGender}, #{memberAge}, #{memberHeight},
+                #{memberWeight}, #{memberPhone}, #{cardTime}, #{cardClass}, #{cardNextClass})
+    </insert>
+
+    <update id="updateMemberByMemberAccount" parameterType="member">
+        UPDATE member
+        SET member_account  = #{memberAccount},
+            member_password = #{memberPassword},
+            member_name     = #{memberName},
+            member_gender   = #{memberGender},
+            member_age      = #{memberAge},
+            member_height   = #{memberHeight},
+            member_weight   = #{memberWeight},
+            member_phone    = #{memberPhone},
+            card_class      = #{cardClass},
+            card_next_class = #{cardNextClass}
+        WHERE member_account = #{memberAccount}
+    </update>
+
+    <select id="selectByAccountAndPassword" resultType="member">
+        SELECT *
+        FROM member
+        WHERE member_account = #{memberAccount}
+          AND member_password = #{memberPassword}
+    </select>
+
+    <delete id="deleteByMemberAccount" parameterType="java.lang.Integer">
+        DELETE
+        FROM member
+        WHERE member_account = #{memberAccount}
+    </delete>
+
+    <select id="selectTotalCount" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM member
+    </select>
+
+    <select id="selectByMemberAccount" parameterType="java.lang.Integer" resultType="member">
+        SELECT *
+        FROM member
+        WHERE member_account = #{memberAccount}
+    </select>
+
+</mapper>

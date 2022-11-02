@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.ClassTableMapper">
+
+    <select id="findAll" resultType="classTable">
+        SELECT *
+        FROM class_table
+    </select>
+
+    <delete id="deleteClassByClassId" parameterType="java.lang.Integer">
+        DELETE
+        FROM class_table
+        WHERE class_id = #{classId}
+    </delete>
+
+    <insert id="insertClass" parameterType="classTable">
+        INSERT INTO class_table(class_id, class_name, class_begin, class_time, coach)
+        VALUES (#{classId}, #{className}, #{classBegin}, #{classTime}, #{coach})
+    </insert>
+
+    <select id="selectByClassId" parameterType="java.lang.Integer" resultType="classTable">
+        SELECT *
+        FROM class_table
+        WHERE class_id = #{classId}
+    </select>
+
+    <delete id="deleteOrderByClassId" parameterType="java.lang.Integer">
+        DELETE
+        FROM class_order
+        WHERE class_id = #{classId}
+    </delete>
+
+
+</mapper>

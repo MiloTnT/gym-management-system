@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">添加课程</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/class/selClass}">课程管理</a></li>
+                    <li class="breadcrumb-item active">添加课程</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/class/addClass}" method="post" name="addForm"
+                          onsubmit="return beforeSubmit(this)">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">编号：</td>
+                                <td><input type="text" class="form-control" placeholder="4位编号" name="classId"></td>
+                            </tr>
+
+                            <tr>
+                                <td text-align="center">名称：</td>
+                                <td><input type="text" class="form-control" placeholder="课程名称" name="className">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">时间：</td>
+                                <td><input type="text" class="form-control" placeholder="xxxx年xx月xx日 00：00" name="classBegin">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">时长：</td>
+                                <td><input type="text" class="form-control" placeholder="xx分钟" name="classTime">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">教练：</td>
+                                <td><input type="text" class="form-control" placeholder="教练" name="coach">
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+<script type="text/javascript">
+    function beforeSubmit(addForm) {
+        if (addForm.classId.value == "") {
+            alert("请输入课程编号！")
+            return false;
+        }
+        if (addForm.className.value == "") {
+            alert("请输入课程名称！")
+            return false;
+        }
+        if (addForm.classBegin.value == "") {
+            alert("请输入课程时间！")
+            return false;
+        }
+        if (addForm.classTime.value == "") {
+            alert("请输入课程时长！")
+            return false;
+        }
+        if (addForm.coach.value == "") {
+            alert("请输入教练！")
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">添加器材</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/equipment/selEquipment}">器材管理</a></li>
+                    <li class="breadcrumb-item active">添加器材</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/equipment/addEquipment}" method="post" name="addForm"
+                          onsubmit="return beforeSubmit(this)">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">器材名称：</td>
+                                <td><input type="text" class="form-control" placeholder="名称" name="equipmentName"></td>
+                            </tr>
+
+                            <tr>
+                                <td text-align="center">器材位置：</td>
+                                <td><input type="text" class="form-control" placeholder="x号房间" name="equipmentLocation">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">器材状态：</td>
+                                <td><input type="text" class="form-control" placeholder="状态" name="equipmentStatus">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">备注信息：</td>
+                                <td><input type="text" class="form-control" placeholder="备注" name="equipmentMessage">
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+<script type="text/javascript">
+    function beforeSubmit(addForm) {
+        if (addForm.equipmentName.value == "") {
+            alert("请输入器材名称！")
+            return false;
+        }
+        if (addForm.equipmentLocation.value == "") {
+            alert("请输入器材位置！")
+            return false;
+        }
+        if (addForm.equipmentStatus.value == "") {
+            alert("请输入器材状态！")
+            return false;
+        }
+        if (addForm.equipmentMessage.value == "") {
+            alert("请输入备注信息！")
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">编辑器材</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/equipment/selEquipment}">器材管理</a></li>
+                    <li class="breadcrumb-item active">编辑器材</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/equipment/updateEquipment}" method="post">
+                        <div th:each="equ:${equipmentList}">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td text-align="center">器材id：</td>
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${equ.equipmentId}" name="equipmentId">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">器材名称：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.equipmentName}"
+                                               name="equipmentName"></td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">器材位置：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.equipmentLocation}"
+                                               name="equipmentLocation">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">器材状态：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.equipmentStatus}"
+                                               name="equipmentStatus">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">器材备注信息：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.equipmentMessage}"
+                                               name="equipmentMessage">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="text-align:center;margin-bottom:15px">
+                                <input type="submit" class="btn btn-outline-success" value="确认修改">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+</body>
+</html>

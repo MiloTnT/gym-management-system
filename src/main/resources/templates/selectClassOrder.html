@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">报名信息</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/class/selClass}">课程管理</a></li>
+                    <li class="breadcrumb-item active">报名信息</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <!--当classOrderList为空（该课程无人报名）时显示-->
+                    <div th:if="${#lists.isEmpty(classOrderList)}">
+                        <table class="table table-hover">
+                            <tr>
+                                <td align="center">暂无报名信息！</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--当classOrderList不为空（该课程已有人报名）时显示-->
+                    <div th:if="${not #lists.isEmpty(classOrderList)}">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">课程编号：</td>
+                                <td th:text="${classOrderList[0].classId}">课程编号</td>
+                            </tr>
+
+                            <tr>
+                                <td text-align="center">课程名称：</td>
+                                <td th:text="${classOrderList[0].className}">课程名称</td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">开课时间：</td>
+                                <td th:text="${classOrderList[0].classBegin}">开课时间</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>报名会员：</strong></td>
+                            </tr>
+                            <tr th:each="order:${classOrderList}">
+                                <td th:text="${order.memberAccount}">无</td>
+                                <td th:text="${order.memberName}">无</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <a th:href="@{/class/selClass}" style="text-align:center;margin-top:10px;margin-bottom:20px">
+                        <input type="submit" class="btn btn-outline-secondary" value="返回">
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+</body>
+</html>

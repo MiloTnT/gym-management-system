@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">编辑员工</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/employee/selEmployee}">员工管理</a></li>
+                    <li class="breadcrumb-item active">编辑员工</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/employee/updateEmployee}" method="post">
+                        <div th:each="emp:${employeeList}">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td text-align="center">工号：</td>
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${emp.employeeAccount}" name="employeeAccount">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">姓名：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.employeeName}"
+                                               name="employeeName"></td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">性别：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.employeeGender}"
+                                               name="employeeGender">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">年龄：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.employeeAge}"
+                                               name="employeeAge">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">职务：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.staff}"
+                                               name="staff">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">备注信息：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.employeeMessage}"
+                                               name="employeeMessage">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="text-align:center;margin-bottom:15px">
+                                <input type="submit" class="btn btn-outline-success" value="确认修改">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+</body>
+</html>

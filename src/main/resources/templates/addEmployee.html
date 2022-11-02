@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header">
+
+</head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">添加员工</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/employee/selEmployee}">员工管理</a></li>
+                    <li class="breadcrumb-item active">添加员工</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/employee/addEmployee}" method="post" name="addForm"
+                          onsubmit="return beforeSubmit(this)">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">工号：</td>
+                                <td><input type="text" class="form-control" placeholder="工号由系统自动生成" name="employeeAccount"
+                                           disabled="disabled">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td text-align="center">姓名：</td>
+                                <td><input type="text" class="form-control" placeholder="姓名" name="employeeName">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">性别：</td>
+                                <td><input type="text" class="form-control" placeholder="性别" name="employeeGender">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">年龄：</td>
+                                <td><input type="text" class="form-control" placeholder="年龄" name="employeeAge">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">职务：</td>
+                                <td><input type="text" class="form-control" placeholder="职务" name="staff">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">备注信息：</td>
+                                <td><input type="text" class="form-control" placeholder="备注信息" name="employeeMessage">
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+<script type="text/javascript">
+    function beforeSubmit(addForm) {
+        if (addForm.employeeName.value == "") {
+            alert("请输入姓名！")
+            return false;
+        }
+        if (addForm.employeeGender.value == "") {
+            alert("请输入性别！")
+            return false;
+        }
+        if (addForm.employeeAge.value == "") {
+            alert("请输入年龄！")
+            return false;
+        }
+
+        if (addForm.staff.value == "") {
+            alert("请输入职务！")
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

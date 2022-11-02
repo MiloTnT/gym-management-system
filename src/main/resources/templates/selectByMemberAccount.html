@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">会员卡查询</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item active">会员卡查询</li>
+                </ol>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        会员卡查询
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <form th:action="@{/member/selByCard}" method="post">
+                                <div style="width: 310px;margin-bottom: 15px">
+                                    <div align="left" style="float:left">
+                                        <input type="text" class="form-control"
+                                               onkeypress="return event.keyCode>=48&&event.keyCode<=57"
+                                               ng-pattern="/[^a-zA-Z]/"
+                                               name="memberAccount">
+                                        </div>
+                                    <div align="right">
+                                        <input type="submit" class="btn btn-outline-success" value="查询">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="bg-light">
+                            <tr>
+                                <th scope="col" class="border-0">会员账号/卡号</th>
+                                <th scope="col" class="border-0">姓名</th>
+                                <th scope="col" class="border-0">办卡时间</th>
+                                <th scope="col" class="border-0">性别</th>
+                                <th scope="col" class="border-0">年龄</th>
+                                <th scope="col" class="border-0">联系方式</th>
+                                <th scope="col" class="border-0">身高</th>
+                                <th scope="col" class="border-0">体重</th>
+                                <th scope="col" class="border-0">购买课时</th>
+                                <th scope="col" class="border-0">剩余课时</th>
+                                <th scope="col" class="border-0">操作</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr th:each="mem:${memberList}">
+                                <td th:text="${mem.memberAccount}">会员账号/卡号</td>
+                                <td th:text="${mem.memberName}">姓名</td>
+                                <td th:text="${mem.cardTime}">办卡时间</td>
+                                <td th:text="${mem.memberGender}">性别</td>
+                                <td th:text="${mem.memberAge}">年龄</td>
+                                <td th:text="${mem.memberPhone}">联系方式</td>
+                                <td th:text="${mem.memberHeight}">身高</td>
+                                <td th:text="${mem.memberWeight}">体重</td>
+                                <td th:text="${mem.cardClass}">购买课时</td>
+                                <td th:text="${mem.cardNextClass}">剩余课时</td>
+                                <td>
+                                    <a th:href="@{/member/toUpdateMember(memberAccount=${mem.memberAccount})}">
+                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="userCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="userCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="userCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">个人信息</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toUserMain}">主页</a></li>
+                    <li class="breadcrumb-item active">个人信息</li>
+                </ol>
+
+                <div class="card mb-4">
+                    <table class="table table-hover">
+                        <tr>
+                            <td text-align="center">会员账号/卡号：</td>
+                            <td th:text="${member.memberAccount}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">姓名：</td>
+                            <td th:text="${member.memberName}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">性别：</td>
+                            <td th:text="${member.memberGender}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">年龄：</td>
+                            <td th:text="${member.memberAge}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">联系方式：</td>
+                            <td th:text="${member.memberPhone}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">身高：</td>
+                            <td th:text="${member.memberHeight}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">体重：</td>
+                            <td th:text="${member.memberWeight}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">办卡时间：</td>
+                            <td th:text="${member.cardTime}"></td>
+                        </tr>
+                        <tr>
+                            <td text-align="center">剩余课时：</td>
+                            <td th:text="${member.cardNextClass}"></td>
+                        </tr>
+                    </table>
+                    <div style="text-align:center;margin-bottom:15px">
+                        <a th:href="@{/user/toUpdateInfo}">
+                            <input type="button" class="btn btn-outline-primary" value="编辑个人信息">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="userCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="userCommon::common-scripts"></div>
+</body>
+</html>

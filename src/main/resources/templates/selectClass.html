@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">课程管理</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item active">课程管理</li>
+                </ol>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        课程信息表
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>名称</th>
+                                <th>时间</th>
+                                <th>时长</th>
+                                <th>教练</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr th:each="class:${classList}">
+                                <td th:text="${class.classId}">编号</td>
+                                <td th:text="${class.className}">名称</td>
+                                <td th:text="${class.classBegin}">时间</td>
+                                <td th:text="${class.classTime}">时长</td>
+                                <td th:text="${class.coach}">教练</td>
+                                <td>
+                                    <a th:href="@{/class/selClassOrder(classId=${class.classId})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">
+                                    </a>
+                                    <a th:href="@{/class/delClass(classId=${class.classId})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="删除">
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                    <a th:href="@{/class/toAddClass}">
+                        <input type="button" class="btn btn-outline-success" value="添加课程信息">
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+<script>
+    function del() {
+        let msg = "确定要删除吗？";
+        if (confirm(msg) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.EmployeeMapper">
+
+    <select id="findAll" resultType="employee">
+        SELECT *
+        FROM employee
+    </select>
+
+    <delete id="deleteByEmployeeAccount" parameterType="java.lang.Integer">
+        DELETE
+        FROM employee
+        WHERE employee_account = #{employeeAccount}
+    </delete>
+
+    <insert id="insertEmployee" parameterType="employee">
+        INSERT INTO employee (employee_account, employee_name, employee_gender,
+                              employee_age, entry_time, staff, employee_message)
+        VALUES (#{employeeAccount}, #{employeeName}, #{employeeGender},
+                #{employeeAge}, #{entryTime}, #{staff}, #{employeeMessage})
+    </insert>
+
+    <update id="updateMemberByEmployeeAccount" parameterType="employee">
+        UPDATE employee
+        SET employee_account = #{employeeAccount},
+            employee_name    = #{employeeName},
+            employee_gender  = #{employeeGender},
+            employee_age     = #{employeeAge},
+            staff            = #{staff},
+            employee_message=#{employeeMessage}
+        WHERE employee_account = #{employeeAccount}
+    </update>
+
+    <select id="selectByEmployeeAccount" parameterType="java.lang.Integer" resultType="employee">
+        SELECT *
+        FROM employee
+        WHERE employee_account = #{employeeAccount}
+    </select>
+
+    <select id="selectTotalCount" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM employee
+    </select>
+
+</mapper>
